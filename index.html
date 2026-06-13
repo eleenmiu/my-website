@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深惠口腔 UI 首页原型</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>牙医创办 · 5年口腔品牌</span>
+        <div class="topbar-actions" aria-label="联系方式">
+          <a href="tel:07523393888" class="topbar-link" title="拨打电话">
+            <i data-lucide="phone"></i>
+            <span>0752-3393888</span>
+          </a>
+          <a href="#reserve" class="topbar-link" title="微信咨询">
+            <i data-lucide="message-circle"></i>
+            <span>微信咨询</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="主导航">
+      <div class="container nav-inner">
+        <a class="nav-item" href="#about">
+          <strong>深惠口腔</strong>
+          <span>SHENHUI</span>
+        </a>
+        <a class="nav-item" href="#services">
+          <strong>诊疗项目</strong>
+          <span>D&T PROJECT</span>
+        </a>
+        <a class="nav-item" href="#doctors">
+          <strong>医生团队</strong>
+          <span>DOCTOR TEAM</span>
+        </a>
+        <a class="brand" href="#" aria-label="深惠口腔首页">
+          <img class="brand-logo" src="assets/images/shenhui-logo.png" alt="深惠口腔">
+        </a>
+        <a class="nav-item" href="#cases">
+          <strong>实力见证</strong>
+          <span>CASES</span>
+        </a>
+        <a class="nav-item" href="#reserve">
+          <strong>在线预约</strong>
+          <span>RESERVATION</span>
+        </a>
+        <a class="nav-item" href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%83%A0%E5%B7%9E%E5%B8%82%E6%83%A0%E9%98%B3%E5%8C%BA%E6%B7%A1%E6%B0%B4%E8%A1%97%E9%81%93%E5%BC%80%E5%9F%8E%E5%A4%A7%E9%81%93%E5%8D%97138-1%E5%8F%B7&amp;callnative=1">
+          <strong>院区地址</strong>
+          <span>ADDRESS</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">DIGITAL DENTAL GROUP</p>
+        <h1 id="hero-title">深惠口腔</h1>
+        <p class="hero-copy">扎根惠州，惠及千家万户。<br>以数字化精准种植，数字化正畸，儿童全生命周期管理，微创美学修复，综合内外科等，构建全龄段、全场景口腔健康服务。<br>硕博医疗团队引领，十年以上临床经验，服务贴心，全线进口设备，一人一消毒，价格公开惠民。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#reserve" title="在线预约">
+            <i data-lucide="calendar-check"></i>
+            <span>在线预约</span>
+          </a>
+          <a class="btn btn-ghost" href="#services" title="查看诊疗项目">
+            <i data-lucide="stethoscope"></i>
+            <span>诊疗项目</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="品牌数据">
+        <div>
+          <strong>5年</strong>
+          <span>口腔服务沉淀</span>
+        </div>
+        <div>
+          <strong>30+</strong>
+          <span>标准诊疗流程</span>
+        </div>
+        <div>
+          <strong>24h</strong>
+          <span>预约响应机制</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="reserve" class="consult-dock" aria-labelledby="reserve-title">
+      <div class="container consult-inner">
+        <div class="dock-heading">
+          <span>快捷咨询入口</span>
+          <strong id="reserve-title">今天想了解哪一类问题？</strong>
+        </div>
+        <div class="quick-topics" aria-label="快捷咨询主题">
+          <button type="button" class="topic is-active" data-topic="种植牙价格">问价格</button>
+          <button type="button" class="topic" data-topic="治疗方案">问治疗</button>
+          <button type="button" class="topic" data-topic="口腔检查">做检查</button>
+          <button type="button" class="topic" data-topic="医生预约">约专家</button>
+        </div>
+        <form class="consult-form">
+          <label class="sr-only" for="consultInput">咨询内容</label>
+          <input id="consultInput" name="message" type="text" value="我想了解种植牙价格" autocomplete="off">
+          <button class="btn btn-warm" type="submit" title="立即咨询">
+            <i data-lucide="send"></i>
+            <span>咨询</span>
+          </button>
+          <button class="btn btn-secondary" type="button" title="预约到院">
+            <i data-lucide="clipboard-list"></i>
+            <span>预约</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+        <div class="section-copy">
+          <p class="section-kicker">Shenhui Dental</p>
+          <h2>以医疗质量为核心的口腔连锁品牌</h2>
+          <p>延续参考站的“品牌背书 + 医疗可信度”表达方式，用更克制的留白、更清晰的转化入口和更柔和的医疗色彩，让用户先感到专业，再顺手完成咨询预约。</p>
+          <div class="principles">
+            <div>
+              <i data-lucide="shield-check"></i>
+              <span>医疗质控</span>
+            </div>
+            <div>
+              <i data-lucide="scan-line"></i>
+              <span>数智诊疗</span>
+            </div>
+            <div>
+              <i data-lucide="heart-handshake"></i>
+              <span>口碑服务</span>
+            </div>
+          </div>
+        </div>
+        <figure class="about-visual">
+          <img src="assets/images/shenhui-clinic-chair.jpg" alt="深惠口腔明亮整洁的诊室环境">
+        </figure>
+      </div>
+    </section>
+
+    <section id="services" class="section services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-title">
+          <p>5 Distinctive D&T Centers</p>
+          <h2 id="services-title">五大特色诊疗中心</h2>
+        </div>
+        <div class="service-grid">
+          <a class="service-card service-large" href="#reserve">
+            <img src="assets/images/doctor-zhang-treatment.jpg" alt="种植医生张敏玲诊间治疗场景">
+            <span>DIGITAL DENTAL IMPLANTS</span>
+            <strong>数智种植</strong>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a class="service-card service-large" href="#reserve">
+            <img src="assets/images/doctor-dai-digital.jpg" alt="正畸主任戴同兰进行数字化方案沟通">
+            <span>DIGITAL ORTHODONTICS</span>
+            <strong>精准正畸</strong>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a class="service-card" href="#reserve">
+            <img src="assets/images/equipment-digital.jpg" alt="深惠口腔数字化诊疗设备">
+            <span>DENTAL REPAIR</span>
+            <strong>美学修复</strong>
+            <p>贴面、嵌体、全瓷冠等精细化修复。</p>
+            <i data-lucide="sparkles"></i>
+          </a>
+          <a class="service-card" href="#reserve">
+            <img src="assets/images/equipment-cleaning.jpg" alt="深惠口腔舒眠洁牙设备">
+            <span>COMBINED CARE</span>
+            <strong>综合治疗</strong>
+            <p>洁牙、补牙、牙周、根管一站式管理。</p>
+            <i data-lucide="activity"></i>
+          </a>
+          <a class="service-card" href="#reserve">
+            <img src="assets/images/children-area.jpg" alt="深惠口腔儿童齿科空间">
+            <span>CHILDREN DENTISTRY</span>
+            <strong>儿童齿科</strong>
+            <p>涂氟、窝沟封闭、儿童早期干预。</p>
+            <i data-lucide="smile"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="doctors" class="section doctor-section" aria-labelledby="doctor-title">
+      <div class="container">
+        <div class="section-title section-title-light">
+          <p>Doctor Team</p>
+          <h2 id="doctor-title">深惠口腔医师团</h2>
+        </div>
+        <div class="doctor-strip" aria-label="医生团队">
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-3.jpg" alt="种植医生张敏玲形象照">
+            <div class="doctor-info">
+              <span>数智种植</span>
+              <strong>张敏玲</strong>
+              <p>种植医生 · 技术院长</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-5.jpg" alt="李德虎医生形象照">
+            <div class="doctor-info">
+              <span>牙周综合</span>
+              <strong>李德虎</strong>
+              <p>牙周专科 · 副院长</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-9.jpg" alt="蔡凌锋医生形象照">
+            <div class="doctor-info">
+              <span>综合诊疗</span>
+              <strong>蔡凌锋</strong>
+              <p>医务科主任 · 主治医生</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-4.jpg" alt="正畸主任戴同兰形象照">
+            <div class="doctor-info">
+              <span>精准正畸</span>
+              <strong>戴同兰</strong>
+              <p>正畸主任 · 院长助理</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-2.jpg" alt="陈志发医生形象照">
+            <div class="doctor-info">
+              <span>口腔正畸</span>
+              <strong>陈志发</strong>
+              <p>正畸医生 · 青年医师</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-1.jpg" alt="蒋洁医生形象照">
+            <div class="doctor-info">
+              <span>综合口腔</span>
+              <strong>蒋洁</strong>
+              <p>口腔医生 · 主治医生</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-6.jpg" alt="钟宙财医生形象照">
+            <div class="doctor-info">
+              <span>种植修复</span>
+              <strong>钟宙财</strong>
+              <p>口腔医生 · 执业医师</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/meituan-doctor-7.jpg" alt="古凤玲医生形象照">
+            <div class="doctor-info">
+              <span>综合口腔</span>
+              <strong>古凤玲</strong>
+              <p>儿牙主任 · 执业医师</p>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <img src="assets/images/doctors-clean/chen-lei-wechatimg2190.jpg" alt="陈磊医生形象照">
+            <div class="doctor-info">
+              <span>牙周专科</span>
+              <strong>陈磊</strong>
+              <p>口腔医生 · 职业医师</p>
+            </div>
+          </article>
+        </div>
+        <div class="more-row">
+          <a class="more-link" href="#reserve">MORE <span>＋</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="section cases-section" aria-labelledby="cases-title">
+      <div class="container cases-grid">
+        <div>
+          <div class="section-title align-left">
+            <p>Massive Cases</p>
+            <h2 id="cases-title">海量案例 实力见证</h2>
+          </div>
+          <div class="case-list">
+            <div class="case-stat soft-red">
+              <strong data-count="1200000">0</strong>
+              <span>累计服务患者人次</span>
+            </div>
+            <div class="case-stat soft-yellow">
+              <strong data-count="68000">0</strong>
+              <span>累计完成种牙颗数</span>
+            </div>
+            <div class="case-stat soft-blue">
+              <strong data-count="36000">0</strong>
+              <span>累计精准正畸案例</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-note">
+          <i data-lucide="database"></i>
+          <p>临床数据库、影像资料和复诊记录形成闭环，为医生方案判断和患者长期口腔管理提供持续支撑。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-title">
+          <p>Information</p>
+          <h2 id="news-title">机构资讯</h2>
+        </div>
+        <div class="news-grid">
+          <a href="#reserve" class="news-card">
+            <img src="assets/images/equipment-sterilization.jpg" alt="深惠口腔标准消毒设备">
+            <span>DENTAL ENCYCLOPEDIA</span>
+            <strong>最新资讯</strong>
+          </a>
+          <a href="#reserve" class="news-card">
+            <img src="assets/images/equipment-digital.jpg" alt="深惠口腔数字化诊疗设备">
+            <span>DENTAL CARE</span>
+            <strong>牙齿百科</strong>
+          </a>
+          <a href="#reserve" class="news-card">
+            <img src="assets/images/news-welfare-community.jpg" alt="深惠口腔社区口福公益活动现场">
+            <span>PUBLIC WELFARE</span>
+            <strong>公益活动</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="floating-consult" aria-label="快捷操作">
+    <a href="#reserve" title="咨询价格"><i data-lucide="badge-dollar-sign"></i><span>价格</span></a>
+    <a href="#reserve" title="治疗方案"><i data-lucide="file-heart"></i><span>方案</span></a>
+    <a href="#reserve" title="预约检查"><i data-lucide="calendar-days"></i><span>检查</span></a>
+    <a href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%83%A0%E5%B7%9E%E5%B8%82%E6%83%A0%E9%98%B3%E5%8C%BA%E6%B7%A1%E6%B0%B4%E8%A1%97%E9%81%93%E5%BC%80%E5%9F%8E%E5%A4%A7%E9%81%93%E5%8D%97138-1%E5%8F%B7&amp;callnative=1" title="地图导航"><i data-lucide="map-pin"></i><span>地址</span></a>
+  </aside>
+
+  <footer id="address" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#">
+          <img class="brand-logo" src="assets/images/shenhui-logo.png" alt="深惠口腔">
+        </a>
+        <p>专业、清晰、有温度的口腔诊疗体验。</p>
+      </div>
+      <div>
+        <strong>院区地址</strong>
+        <p>
+          <a class="footer-address-link" href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%83%A0%E5%B7%9E%E5%B8%82%E6%83%A0%E9%98%B3%E5%8C%BA%E6%B7%A1%E6%B0%B4%E8%A1%97%E9%81%93%E5%BC%80%E5%9F%8E%E5%A4%A7%E9%81%93%E5%8D%97138-1%E5%8F%B7&amp;callnative=1">广东省惠州市惠阳区淡水街道开城大道南138-1号</a>
+        </p>
+      </div>
+      <div>
+        <strong>预约热线</strong>
+        <p>0752-3393888</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/lucide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
