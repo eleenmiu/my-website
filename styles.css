@@ -595,7 +595,7 @@ input {
 .doctor-section {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(8, 14, 18, 0.96), rgba(15, 24, 28, 0.98)),
+    linear-gradient(180deg, rgba(5, 10, 10, 0.96), rgba(12, 15, 13, 0.98)),
     url("assets/images/shenhui-hero-1-5.jpg") center / cover fixed;
 }
 
@@ -604,14 +604,18 @@ input {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0)),
-    rgba(4, 10, 13, 0.78);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(130, 101, 45, 0.08)),
+    rgba(4, 8, 8, 0.8);
   pointer-events: none;
 }
 
 .doctor-section .container {
   position: relative;
   z-index: 1;
+}
+
+.doctor-section .section-title-light p {
+  color: #e8cfa0;
 }
 
 .doctor-strip {
@@ -625,11 +629,13 @@ input {
   min-height: 420px;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(232, 209, 164, 0.42);
   background:
-    linear-gradient(180deg, rgba(236, 241, 242, 0.96), rgba(204, 215, 218, 0.9)),
-    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.98), rgba(223, 230, 232, 0.82) 58%, rgba(167, 184, 189, 0.62));
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.34);
+    linear-gradient(180deg, rgba(245, 239, 225, 0.98), rgba(219, 204, 174, 0.92)),
+    radial-gradient(circle at 50% 18%, rgba(255, 250, 238, 0.98), rgba(232, 217, 190, 0.82) 58%, rgba(163, 133, 80, 0.58));
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
 }
 
 .doctor-card::before {
@@ -639,9 +645,9 @@ input {
   z-index: 0;
   opacity: 0.78;
   background:
-    linear-gradient(90deg, rgba(3, 9, 11, 0.16), rgba(255, 255, 255, 0) 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(15, 23, 27, 0.34) 70%, rgba(4, 8, 10, 0.82)),
-    radial-gradient(circle at 72% 12%, rgba(255, 255, 255, 0.42), transparent 24%);
+    linear-gradient(90deg, rgba(32, 25, 15, 0.16), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(29, 24, 17, 0.3) 70%, rgba(7, 8, 7, 0.86)),
+    radial-gradient(circle at 72% 12%, rgba(255, 246, 219, 0.42), transparent 24%);
 }
 
 .doctor-card img {
@@ -652,7 +658,7 @@ input {
   min-height: 420px;
   object-fit: cover;
   object-position: center bottom;
-  filter: saturate(0.74) contrast(1.04) brightness(0.93);
+  filter: saturate(0.86) contrast(1.06) brightness(0.96);
   transform: scale(1.035);
   transform-origin: center bottom;
 }
@@ -668,8 +674,8 @@ input {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.02) 44%, rgba(0, 0, 0, 0.16)),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 28%, rgba(0, 0, 0, 0.46) 72%, rgba(0, 0, 0, 0.82));
+    linear-gradient(90deg, rgba(10, 8, 5, 0.3), rgba(0, 0, 0, 0.02) 44%, rgba(28, 21, 11, 0.18)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 28%, rgba(18, 16, 12, 0.43) 72%, rgba(4, 6, 5, 0.84));
 }
 
 .doctor-info {
@@ -687,8 +693,9 @@ input {
   align-items: center;
   padding: 0 12px;
   border-radius: 20px;
-  color: #dbe3e7;
-  background: rgba(50, 62, 72, 0.88);
+  color: #f5ead6;
+  background: rgba(46, 39, 27, 0.88);
+  border: 1px solid rgba(230, 204, 154, 0.24);
   font-size: 13px;
 }
 
@@ -696,11 +703,12 @@ input {
   display: block;
   margin-top: 14px;
   font-size: 28px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
 }
 
 .doctor-info p {
   margin: 8px 0 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(248, 237, 218, 0.82);
 }
 
 .more-row {
