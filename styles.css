@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 16px;
 }
 
 body {
@@ -989,6 +990,10 @@ input {
 }
 
 @media (max-width: 760px) {
+  body {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
   .container {
     width: min(100% - 28px, 1180px);
   }
@@ -1026,35 +1031,65 @@ input {
   }
 
   .hero {
-    min-height: 610px;
+    min-height: auto;
+    height: auto;
+    padding: 46px 0 88px;
+  }
+
+  .hero-media {
+    background-position: 58% center;
   }
 
   .hero-content {
     justify-content: flex-start;
     padding-left: 0;
-    padding-top: 54px;
+    padding-top: 0;
   }
 
   .hero h1 {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .hero-copy {
-    font-size: 17px;
-    line-height: 1.75;
+    max-width: 100%;
+    margin: 18px 0 22px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    min-height: 42px;
+    padding: 0 16px;
   }
 
   .hero-stats {
-    bottom: 20px;
-    grid-template-columns: 1fr;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 28px);
+    margin: 20px auto 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .hero-stats div {
-    min-height: 64px;
+    min-height: 68px;
+    padding: 10px 10px;
   }
 
   .hero-stats strong {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .hero-stats span {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.35;
   }
 
   .consult-inner {
@@ -1070,12 +1105,17 @@ input {
   }
 
   .section {
-    padding: 58px 0;
+    padding: 52px 0;
   }
 
   .section-copy h2,
   .section-title h2 {
-    font-size: 30px;
+    font-size: 29px;
+    line-height: 1.28;
+  }
+
+  .section-title {
+    margin-bottom: 26px;
   }
 
   .section-copy p:not(.section-kicker) {
@@ -1087,6 +1127,10 @@ input {
   .case-list,
   .news-grid {
     grid-template-columns: 1fr;
+  }
+
+  .doctor-strip {
+    gap: 18px;
   }
 
   .about-visual img {
@@ -1105,12 +1149,34 @@ input {
 
   .doctor-card,
   .doctor-card img {
-    min-height: 360px;
+    min-height: 0;
+    height: min(92vw, 430px);
   }
 
   .doctor-card:nth-child(1) img,
   .doctor-card:nth-child(2) img {
-    object-position: 12% center;
+    object-position: center bottom;
+  }
+
+  .doctor-info {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .doctor-info span {
+    min-height: 26px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .doctor-info strong {
+    margin-top: 12px;
+    font-size: 27px;
+  }
+
+  .doctor-info p {
+    font-size: 16px;
   }
 
   .case-note {
@@ -1123,19 +1189,33 @@ input {
   }
 
   .floating-consult {
-    top: auto;
+    left: 10px;
     right: 10px;
-    bottom: 10px;
+    top: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
     width: auto;
     display: grid;
-    grid-template-columns: repeat(4, 58px);
+    grid-template-columns: repeat(4, 1fr);
     transform: none;
+    border: 1px solid rgba(232, 238, 241, 0.92);
+    border-radius: 12px;
+    box-shadow: 0 12px 34px rgba(12, 28, 33, 0.18);
   }
 
   .floating-consult a {
-    min-height: 58px;
+    min-height: 52px;
     border-bottom: 0;
     border-right: 1px solid var(--line);
+    font-size: 12px;
+  }
+
+  .floating-consult a:last-child {
+    border-right: 0;
+  }
+
+  .floating-consult svg {
+    width: 19px;
+    height: 19px;
   }
 
   .footer-grid {
