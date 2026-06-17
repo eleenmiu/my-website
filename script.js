@@ -11,15 +11,143 @@ topics.forEach((topic) => {
   topic.addEventListener("click", () => {
     topics.forEach((item) => item.classList.remove("is-active"));
     topic.classList.add("is-active");
-    consultInput.value = `我想了解${topic.dataset.topic}`;
-    consultInput.focus();
+    if (consultInput) {
+      consultInput.value = `我想了解${topic.dataset.topic}`;
+      consultInput.focus();
+    }
   });
 });
 
-document.querySelector(".consult-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  consultInput.value = consultInput.value.trim() || "我想预约口腔检查";
-});
+const consultForm = document.querySelector(".consult-form");
+if (consultForm && consultInput) {
+  consultForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    consultInput.value = consultInput.value.trim() || "我想预约口腔检查";
+  });
+}
+
+const orthoForm = document.querySelector(".ortho-form");
+if (orthoForm) {
+  orthoForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const button = orthoForm.querySelector("button span");
+    if (button) button.textContent = "已收到预约";
+  });
+}
+
+const smileCanvas = document.querySelector("#smileCanvas");
+const smileUpload = document.querySelector("#smileUpload");
+const smileDemo = document.querySelector("#smileDemo");
+const smileEmpty = document.querySelector("#smileEmpty");
+
+const drawSmilePreview = (image) => {
+  if (!smileCanvas) return;
+  const ctx = smileCanvas.getContext("2d");
+  const width = smileCanvas.width;
+  const height = smileCanvas.height;
+  const half = width / 2;
+
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = "#101f24";
+  ctx.fillRect(0, 0, width, height);
+
+  const scale = Math.max(width / image.width, height / image.height);
+  const drawWidth = image.width * scale;
+  const drawHeight = image.height * scale;
+  const x = (width - drawWidth) / 2;
+  const y = (height - drawHeight) / 2;
+
+  ctx.drawImage(image, x, y, drawWidth, drawHeight);
+  const original = ctx.getImageData(0, 0, width, height);
+
+  ctx.putImageData(original, 0, 0);
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(half, 0, half, height);
+  ctx.clip();
+  ctx.filter = "brightness(1.08) contrast(1.05) saturate(0.96)";
+  ctx.drawImage(image, x, y, drawWidth, drawHeight);
+  ctx.filter = "none";
+
+  const mouthX = half + width * 0.13;
+  const mouthY = height * 0.53;
+  const mouthW = width * 0.24;
+  const mouthH = height * 0.1;
+  const gradient = ctx.createRadialGradient(
+    mouthX + mouthW / 2,
+    mouthY + mouthH / 2,
+    4,
+    mouthX + mouthW / 2,
+    mouthY + mouthH / 2,
+    mouthW * 0.72,
+  );
+  gradient.addColorStop(0, "rgba(255,255,255,0.42)");
+  gradient.addColorStop(0.58, "rgba(255,248,232,0.24)");
+  gradient.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.fillStyle = gradient;
+  ctx.beginPath();
+  ctx.ellipse(mouthX + mouthW / 2, mouthY + mouthH / 2, mouthW / 2, mouthH / 2, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.strokeStyle = "rgba(255,255,255,0.54)";
+  ctx.lineWidth = 1.2;
+  for (let i = 1; i < 6; i += 1) {
+    const px = mouthX + (mouthW / 6) * i;
+    ctx.beginPath();
+    ctx.moveTo(px, mouthY + mouthH * 0.18);
+    ctx.quadraticCurveTo(px + 2, mouthY + mouthH * 0.5, px, mouthY + mouthH * 0.82);
+    ctx.stroke();
+  }
+  ctx.beginPath();
+  ctx.moveTo(mouthX + mouthW * 0.08, mouthY + mouthH * 0.5);
+  ctx.quadraticCurveTo(mouthX + mouthW * 0.5, mouthY + mouthH * 0.42, mouthX + mouthW * 0.92, mouthY + mouthH * 0.5);
+  ctx.stroke();
+  ctx.restore();
+
+  ctx.fillStyle = "rgba(0,0,0,0.36)";
+  ctx.fillRect(0, 0, width, 44);
+  ctx.fillStyle = "#fff";
+  ctx.font = "700 20px sans-serif";
+  ctx.fillText("当前微笑", 24, 30);
+  ctx.fillText("矫正后模拟", half + 24, 30);
+
+  ctx.strokeStyle = "rgba(255,255,255,0.82)";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(half, 0);
+  ctx.lineTo(half, height);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(16, 45, 53, 0.82)";
+  ctx.fillRect(half + 18, height - 70, half - 36, 44);
+  ctx.fillStyle = "#f7e7c4";
+  ctx.font = "700 17px sans-serif";
+  ctx.fillText("效果仅供沟通参考", half + 36, height - 42);
+
+  if (smileEmpty) smileEmpty.classList.add("is-hidden");
+};
+
+const loadSmileImage = (src) => {
+  const image = new Image();
+  image.onload = () => drawSmilePreview(image);
+  image.src = src;
+};
+
+if (smileUpload) {
+  smileUpload.addEventListener("change", () => {
+    const file = smileUpload.files && smileUpload.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => loadSmileImage(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+
+if (smileDemo) {
+  smileDemo.addEventListener("click", () => {
+    loadSmileImage("assets/images/doctors-champagne/meituan-doctor-4.jpg");
+  });
+}
 
 const counters = document.querySelectorAll("[data-count]");
 const formatNumber = (value) => {

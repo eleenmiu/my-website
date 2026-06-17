@@ -941,6 +941,516 @@ input {
   color: #fff;
 }
 
+.ortho-page {
+  color: #243038;
+  background: #fbfaf6;
+}
+
+.ortho-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px max(20px, calc((100vw - 1180px) / 2));
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(216, 224, 226, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.ortho-logo img {
+  width: auto;
+  height: 48px;
+}
+
+.ortho-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ortho-nav a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 6px;
+  color: #47545a;
+  font-weight: 700;
+}
+
+.ortho-nav a:hover {
+  color: #fff;
+  background: #0f2d35;
+}
+
+.ortho-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0;
+  color: #fff;
+  background:
+    linear-gradient(100deg, rgba(5, 13, 15, 0.92) 0%, rgba(11, 30, 34, 0.84) 46%, rgba(171, 137, 76, 0.55) 100%),
+    url("assets/images/doctor-dai-digital.jpg") center / cover;
+}
+
+.ortho-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 110px;
+  background: linear-gradient(180deg, rgba(251, 250, 246, 0), #fbfaf6);
+  pointer-events: none;
+}
+
+.ortho-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: center;
+  gap: 46px;
+}
+
+.ortho-kicker,
+.ortho-title p {
+  margin: 0 0 10px;
+  color: #d9b978;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ortho-hero h1 {
+  max-width: 620px;
+  margin: 0;
+  font-size: 58px;
+  line-height: 1.08;
+}
+
+.ortho-hero-copy > p:not(.ortho-kicker) {
+  max-width: 680px;
+  margin: 22px 0 28px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 19px;
+  line-height: 1.9;
+  font-weight: 700;
+}
+
+.ortho-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ortho-hero-card,
+.smile-preview-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(238, 218, 178, 0.45);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.34);
+}
+
+.ortho-hero-card img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+}
+
+.ortho-card-note {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(4, 10, 12, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.ortho-card-note strong,
+.ortho-card-note span {
+  display: block;
+}
+
+.ortho-card-note strong {
+  font-size: 22px;
+}
+
+.ortho-card-note span {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.smile-preview-card {
+  padding: 14px;
+  color: #17262b;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.smile-preview-stage {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(21, 39, 43, 0.92), rgba(154, 124, 73, 0.68)),
+    url("assets/images/orthodontics.jpg") center / cover;
+}
+
+.smile-preview-stage canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  display: block;
+}
+
+.smile-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  background: rgba(5, 12, 14, 0.32);
+}
+
+.smile-empty.is-hidden {
+  display: none;
+}
+
+.smile-empty svg {
+  width: 42px;
+  height: 42px;
+  color: #e8c889;
+}
+
+.smile-empty strong {
+  font-size: 28px;
+}
+
+.smile-empty span {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 700;
+}
+
+.smile-upload-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.smile-upload-panel input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.smile-upload-btn,
+.smile-demo-btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.smile-upload-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #00acc1, #2fd46b);
+}
+
+.smile-demo-btn {
+  color: #193139;
+  background: #efe3c8;
+}
+
+.smile-upload-btn svg,
+.smile-demo-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+.smile-privacy {
+  margin: 10px 2px 0;
+  color: #66777f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.smile-steps-section {
+  padding: 38px 0;
+  background: #fbfaf6;
+}
+
+.smile-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.smile-steps article {
+  padding: 22px;
+  border: 1px solid rgba(224, 211, 184, 0.9);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(27, 43, 49, 0.07);
+}
+
+.smile-steps span {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #0f2d35;
+  font-weight: 800;
+}
+
+.smile-steps strong {
+  display: block;
+  margin-top: 14px;
+  color: #162226;
+  font-size: 20px;
+}
+
+.smile-steps p {
+  margin: 8px 0 0;
+  color: #66777f;
+  line-height: 1.7;
+}
+
+.ortho-section {
+  padding: 72px 0;
+}
+
+.ortho-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.ortho-title.align-left {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.ortho-title h2,
+.ortho-doctor h2,
+.ortho-book h2 {
+  margin: 0;
+  color: #162226;
+  font-size: 40px;
+  line-height: 1.22;
+}
+
+.ortho-title span,
+.ortho-book p,
+.ortho-doctor p {
+  display: block;
+  margin-top: 16px;
+  color: #5f6f76;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.ortho-hooks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ortho-hooks article,
+.ortho-plan-list article {
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid rgba(224, 211, 184, 0.9);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(27, 43, 49, 0.08);
+}
+
+.ortho-hooks svg {
+  width: 32px;
+  height: 32px;
+  color: #b08a45;
+}
+
+.ortho-hooks strong,
+.ortho-plan-list strong {
+  display: block;
+  margin-top: 18px;
+  color: #18272c;
+  font-size: 22px;
+}
+
+.ortho-hooks p,
+.ortho-plan-list p {
+  margin: 12px 0 0;
+  color: #66777f;
+  line-height: 1.75;
+}
+
+.ortho-plans-section,
+.ortho-flow-section {
+  background: #f2eee5;
+}
+
+.ortho-plans-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.ortho-plan-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ortho-plan-list span {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #0f2d35;
+  font-weight: 800;
+}
+
+.ortho-doctor {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  align-items: center;
+  gap: 46px;
+}
+
+.ortho-doctor > img {
+  width: 100%;
+  aspect-ratio: 1 / 1.18;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 24px 58px rgba(28, 40, 44, 0.16);
+}
+
+.ortho-doctor-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.ortho-doctor-points span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 18px;
+  color: #765b2a;
+  background: #f3e7cc;
+  font-weight: 700;
+}
+
+.ortho-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.ortho-flow div {
+  min-height: 132px;
+  padding: 22px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(145deg, #102a31, #1d4148);
+}
+
+.ortho-flow strong,
+.ortho-flow span {
+  display: block;
+}
+
+.ortho-flow strong {
+  color: #e8c889;
+  font-size: 24px;
+}
+
+.ortho-flow span {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ortho-book-section {
+  padding-bottom: 96px;
+}
+
+.ortho-book {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 32px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 8px;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(9, 27, 32, 0.96), rgba(35, 44, 40, 0.94)),
+    url("assets/images/clinic-room.jpg") center / cover;
+  box-shadow: 0 24px 58px rgba(28, 40, 44, 0.16);
+}
+
+.ortho-book h2 {
+  color: #fff;
+}
+
+.ortho-book p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.ortho-form {
+  display: grid;
+  gap: 12px;
+}
+
+.ortho-form label {
+  display: grid;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 700;
+}
+
+.ortho-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.ortho-form input::placeholder {
+  color: rgba(255, 255, 255, 0.58);
+}
+
 @media (max-width: 1024px) {
   .nav-inner {
     min-height: auto;
@@ -986,6 +1496,21 @@ input {
   .service-card,
   .service-large {
     grid-column: span 3;
+  }
+
+  .ortho-hero-grid,
+  .ortho-plans-grid,
+  .ortho-book {
+    grid-template-columns: 1fr;
+  }
+
+  .ortho-hooks,
+  .ortho-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ortho-plan-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1220,5 +1745,146 @@ input {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ortho-header {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 10px 14px 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ortho-logo img {
+    height: 38px;
+  }
+
+  .ortho-nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .ortho-nav a {
+    min-height: 34px;
+    padding: 0 12px;
+    white-space: nowrap;
+    font-size: 14px;
+    background: #f4f7f7;
+  }
+
+  .ortho-hero {
+    padding: 48px 0 58px;
+    background-position: 58% center;
+  }
+
+  .ortho-hero-grid {
+    gap: 26px;
+  }
+
+  .ortho-hero h1 {
+    font-size: 39px;
+  }
+
+  .ortho-hero-copy > p:not(.ortho-kicker) {
+    margin: 18px 0 22px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .ortho-actions {
+    gap: 10px;
+  }
+
+  .ortho-actions .btn {
+    flex: 1 1 140px;
+    min-height: 44px;
+    padding: 0 14px;
+  }
+
+  .ortho-hero-card img {
+    height: 236px;
+  }
+
+  .smile-preview-card {
+    padding: 10px;
+  }
+
+  .smile-preview-stage {
+    min-height: 300px;
+  }
+
+  .smile-preview-stage canvas {
+    min-height: 300px;
+  }
+
+  .smile-upload-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .smile-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .smile-steps article {
+    padding: 20px;
+  }
+
+  .ortho-page .ortho-hero {
+    padding-bottom: 96px;
+  }
+
+  .ortho-section {
+    padding: 52px 0;
+  }
+
+  .ortho-title {
+    margin-bottom: 24px;
+  }
+
+  .ortho-title h2,
+  .ortho-doctor h2,
+  .ortho-book h2 {
+    font-size: 29px;
+  }
+
+  .ortho-title span,
+  .ortho-book p,
+  .ortho-doctor p {
+    font-size: 16px;
+  }
+
+  .ortho-hooks,
+  .ortho-flow,
+  .ortho-doctor,
+  .ortho-book {
+    grid-template-columns: 1fr;
+  }
+
+  .ortho-hooks article,
+  .ortho-plan-list article {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .ortho-doctor {
+    gap: 24px;
+  }
+
+  .ortho-doctor > img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .ortho-flow div {
+    min-height: 108px;
+  }
+
+  .ortho-book {
+    padding: 24px;
+  }
+
+  .ortho-book-section {
+    padding-bottom: 120px;
   }
 }

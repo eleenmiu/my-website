@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深惠口腔精准正畸方案</title>
+  <link rel="stylesheet" href="styles.css?v=ortho-20260617">
+</head>
+<body class="ortho-page">
+  <header class="ortho-header">
+    <a class="ortho-logo" href="index.html" aria-label="返回深惠口腔首页">
+      <img src="assets/images/shenhui-logo.png" alt="深惠口腔">
+    </a>
+    <nav class="ortho-nav" aria-label="正畸页面导航">
+      <a href="#check">自测</a>
+      <a href="#plans">方案</a>
+      <a href="#doctor">医生</a>
+      <a href="#book">预约</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ortho-hero">
+      <div class="container ortho-hero-grid">
+        <div class="ortho-hero-copy">
+          <p class="ortho-kicker">Smile Preview</p>
+          <h1>上传一张微笑照，先看矫正后的样子</h1>
+          <p>照片只在你的浏览器本地处理，生成一张“正畸后微笑模拟图”。效果仅作沟通参考，真正方案仍需医生结合口扫、片子和咬合情况判断。</p>
+          <div class="ortho-actions">
+            <a class="btn btn-primary" href="#smile-preview">
+              <i data-lucide="image"></i>
+              <span>上传微笑照</span>
+            </a>
+            <a class="btn btn-ghost" href="#check">
+              <i data-lucide="clipboard-list"></i>
+              <span>先做自测</span>
+            </a>
+          </div>
+        </div>
+        <div class="smile-preview-card" id="smile-preview" aria-label="上传微笑照片生成正畸效果预览">
+          <div class="smile-preview-stage">
+            <canvas id="smileCanvas" width="720" height="520" aria-label="正畸模拟预览画布"></canvas>
+            <div class="smile-empty" id="smileEmpty">
+              <i data-lucide="scan"></i>
+              <strong>上传微笑照</strong>
+              <span>自动生成前后对比预览</span>
+            </div>
+          </div>
+          <div class="smile-upload-panel">
+            <label class="smile-upload-btn" for="smileUpload">
+              <i data-lucide="upload"></i>
+              <span>选择照片</span>
+            </label>
+            <input id="smileUpload" type="file" accept="image/*">
+            <button class="smile-demo-btn" id="smileDemo" type="button">
+              <i data-lucide="sparkles"></i>
+              <span>看示例效果</span>
+            </button>
+          </div>
+          <p class="smile-privacy">本功能为本地模拟预览，不上传、不保存照片；结果仅供沟通参考。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ortho-section smile-steps-section">
+      <div class="container smile-steps">
+        <article>
+          <span>01</span>
+          <strong>上传正面微笑照</strong>
+          <p>光线明亮、牙齿露出越清楚，预览越直观。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>生成矫正后参考</strong>
+          <p>页面会优化牙齿区域的整齐感、亮度和笑线观感。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>预约医生面诊</strong>
+          <p>最终矫正方案需结合口扫、影像和咬合检查。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="check" class="ortho-section">
+      <div class="container">
+        <div class="ortho-title">
+          <p>Quick Check</p>
+          <h2>这些情况，建议先做正畸评估</h2>
+        </div>
+        <div class="ortho-hooks">
+          <article>
+            <i data-lucide="scan"></i>
+            <strong>笑起来露牙不自然</strong>
+            <p>牙齿拥挤、牙缝、牙弓窄，容易让笑容显乱。</p>
+          </article>
+          <article>
+            <i data-lucide="align-center"></i>
+            <strong>咬合不稳或牙齿磨耗</strong>
+            <p>上下牙咬不准，可能影响咀嚼和长期牙周稳定。</p>
+          </article>
+          <article>
+            <i data-lucide="user-check"></i>
+            <strong>侧脸嘴凸或下巴后缩</strong>
+            <p>部分嘴凸、深覆合问题，可通过正畸改善侧貌协调。</p>
+          </article>
+          <article>
+            <i data-lucide="smile"></i>
+            <strong>孩子换牙期牙列异常</strong>
+            <p>早期干预关注牙弓发育、口呼吸、反颌等风险。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="ortho-section ortho-plans-section">
+      <div class="container ortho-plans-grid">
+        <div class="ortho-title align-left">
+          <p>Plan Match</p>
+          <h2>不是所有人都适合同一种矫正</h2>
+          <span>深惠口腔会结合面型、牙周、咬合和预算，匹配更合适的矫正路径。</span>
+        </div>
+        <div class="ortho-plan-list">
+          <article>
+            <span>01</span>
+            <strong>金属托槽矫正</strong>
+            <p>适合大多数牙列不齐、咬合问题，控制力强，性价比高。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>陶瓷半隐形矫正</strong>
+            <p>托槽颜色更接近牙色，兼顾矫正效率和日常美观。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>隐形矫正</strong>
+            <p>透明牙套可自行摘戴，更适合对形象管理要求高的人群。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="doctor" class="ortho-section">
+      <div class="container ortho-doctor">
+        <img src="assets/images/doctors-champagne/meituan-doctor-4.jpg" alt="戴同兰正畸主任形象照">
+        <div>
+          <p class="ortho-kicker">Orthodontist</p>
+          <h2>正畸主任把关方案细节</h2>
+          <p>正畸不是简单把牙排齐，更要看牙根方向、咬合关系、牙周条件和面型协调。评估阶段会结合口扫、影像资料和面诊沟通，减少盲目矫正。</p>
+          <div class="ortho-doctor-points">
+            <span>数字化口扫</span>
+            <span>侧貌分析</span>
+            <span>牙周评估</span>
+            <span>方案复盘</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ortho-section ortho-flow-section">
+      <div class="container">
+        <div class="ortho-title">
+          <p>Process</p>
+          <h2>一次正畸评估，会看这些</h2>
+        </div>
+        <div class="ortho-flow">
+          <div><strong>01</strong><span>口腔基础检查</span></div>
+          <div><strong>02</strong><span>数字化口扫建模</span></div>
+          <div><strong>03</strong><span>牙周与咬合评估</span></div>
+          <div><strong>04</strong><span>沟通矫正方案</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="ortho-section ortho-book-section">
+      <div class="container ortho-book">
+        <div>
+          <p class="ortho-kicker">Book Now</p>
+          <h2>先预约一次正畸评估</h2>
+          <p>留下你的咨询方向，到院后由医生结合牙齿情况判断是否适合矫正、适合哪类方案。</p>
+        </div>
+        <form class="ortho-form">
+          <label>
+            <span>想改善的问题</span>
+            <input type="text" value="我想了解牙齿矫正方案">
+          </label>
+          <label>
+            <span>联系方式</span>
+            <input type="tel" placeholder="请输入手机号">
+          </label>
+          <button class="btn btn-primary" type="submit">
+            <i data-lucide="send"></i>
+            <span>提交预约</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside class="floating-consult" aria-label="快捷咨询">
+    <a href="#book" title="问价格">
+      <i data-lucide="dollar-sign"></i>
+      <span>价格</span>
+    </a>
+    <a href="#plans" title="看方案">
+      <i data-lucide="file-text"></i>
+      <span>方案</span>
+    </a>
+    <a href="#check" title="做自测">
+      <i data-lucide="calendar"></i>
+      <span>自测</span>
+    </a>
+    <a href="index.html" title="返回首页">
+      <i data-lucide="home"></i>
+      <span>首页</span>
+    </a>
+  </aside>
+
+  <script src="assets/vendor/lucide.min.js"></script>
+  <script src="script.js?v=ortho-20260617"></script>
+</body>
+</html>
