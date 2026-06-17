@@ -942,6 +942,9 @@ input {
 }
 
 .ortho-page {
+  --smile-hook-width: 332px;
+  --smile-hook-left: max(18px, calc((100vw - 1280px) / 2));
+  --smile-hook-gap: 30px;
   color: #243038;
   background: #fbfaf6;
 }
@@ -1451,6 +1454,53 @@ input {
   color: rgba(255, 255, 255, 0.58);
 }
 
+@media (min-width: 1180px) {
+  .ortho-page .container {
+    width: min(900px, calc(100vw - var(--smile-hook-left) - var(--smile-hook-width) - var(--smile-hook-gap) - 28px));
+    margin-left: calc(var(--smile-hook-left) + var(--smile-hook-width) + var(--smile-hook-gap));
+    margin-right: 28px;
+  }
+
+  .ortho-header {
+    padding-left: calc(var(--smile-hook-left) + var(--smile-hook-width) + var(--smile-hook-gap));
+  }
+
+  .ortho-hero-grid {
+    display: block;
+  }
+
+  .ortho-hero-copy {
+    max-width: 820px;
+  }
+
+  .smile-preview-card {
+    position: fixed;
+    left: var(--smile-hook-left);
+    top: 92px;
+    z-index: 35;
+    width: var(--smile-hook-width);
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+  }
+
+  .smile-preview-stage {
+    min-height: 242px;
+  }
+
+  .smile-preview-stage canvas {
+    min-height: 242px;
+  }
+
+  .smile-empty strong {
+    font-size: 23px;
+  }
+
+  .smile-empty span,
+  .smile-privacy {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-inner {
     min-height: auto;
@@ -1510,6 +1560,12 @@ input {
   }
 
   .ortho-plan-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1179px) {
+  .ortho-hero-grid {
     grid-template-columns: 1fr;
   }
 }
