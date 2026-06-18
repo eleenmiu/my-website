@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深惠口腔客资管理</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="crm-shell">
+    <section class="login-panel" id="loginPanel">
+      <div>
+        <span class="crm-kicker">Shenhui CRM</span>
+        <h1>客资管理后台</h1>
+        <p>登录后查看官网、正畸钩子和预约表单收集到的客户信息。</p>
+      </div>
+      <form class="login-form" id="loginForm">
+        <label>
+          <span>账号</span>
+          <input name="username" type="text" value="admin" autocomplete="username">
+        </label>
+        <label>
+          <span>密码</span>
+          <input name="password" type="password" value="123456" autocomplete="current-password">
+        </label>
+        <button type="submit">登录后台</button>
+        <p class="form-message" id="loginMessage"></p>
+      </form>
+    </section>
+
+    <section class="dashboard is-hidden" id="dashboard">
+      <header class="dashboard-header">
+        <div>
+          <span class="crm-kicker">Lead Center</span>
+          <h1>深惠口腔客资中心</h1>
+        </div>
+        <div class="header-actions">
+          <button class="notify-btn" id="notifyButton" type="button">开启通知</button>
+          <button class="logout-btn" id="logoutButton" type="button">退出</button>
+        </div>
+      </header>
+
+      <section class="stats-grid" aria-label="客资统计">
+        <article>
+          <span>全部客资</span>
+          <strong id="statTotal">0</strong>
+        </article>
+        <article>
+          <span>新线索</span>
+          <strong id="statNew">0</strong>
+        </article>
+        <article>
+          <span>已预约</span>
+          <strong id="statBooked">0</strong>
+        </article>
+        <article>
+          <span>今日新增</span>
+          <strong id="statToday">0</strong>
+        </article>
+      </section>
+
+      <section class="toolbar" aria-label="筛选客资">
+        <input id="searchInput" type="search" placeholder="搜索姓名、电话、项目来源">
+        <select id="statusFilter">
+          <option value="all">全部状态</option>
+          <option value="new">新客资</option>
+          <option value="contacted">已联系</option>
+          <option value="booked">已预约</option>
+          <option value="invalid">无效</option>
+        </select>
+        <button id="refreshButton" type="button">刷新</button>
+      </section>
+
+      <form class="quick-create" id="quickCreateForm" aria-label="快速录入客资">
+        <input name="name" type="text" placeholder="客户姓名">
+        <input name="phone" type="tel" placeholder="手机号">
+        <input name="interest" type="text" placeholder="咨询项目，如牙齿矫正">
+        <button type="submit">录入客资</button>
+      </form>
+
+      <section class="lead-layout">
+        <div class="lead-list" id="leadList" aria-label="客户列表"></div>
+        <aside class="lead-detail" id="leadDetail">
+          <span class="empty-state">选择左侧客资查看详情</span>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -7,6 +7,16 @@ const bootIcons = () => {
 const topics = document.querySelectorAll(".topic");
 const consultInput = document.querySelector("#consultInput");
 
+const submitLead = async (lead) => {
+  const response = await fetch("/api/leads", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(lead),
+  });
+  if (!response.ok) throw new Error("提交失败");
+  return response.json();
+};
+
 topics.forEach((topic) => {
   topic.addEventListener("click", () => {
     topics.forEach((item) => item.classList.remove("is-active"));
@@ -20,18 +30,44 @@ topics.forEach((topic) => {
 
 const consultForm = document.querySelector(".consult-form");
 if (consultForm && consultInput) {
-  consultForm.addEventListener("submit", (event) => {
+  consultForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    consultInput.value = consultInput.value.trim() || "我想预约口腔检查";
+    const message = consultInput.value.trim() || "我想预约口腔检查";
+    consultInput.value = message;
+    const button = consultForm.querySelector("button[type='submit'] span");
+    if (button) button.textContent = "已提交";
+    try {
+      await submitLead({
+        name: "官网访客",
+        phone: "",
+        interest: message,
+        source: "官网快捷咨询",
+      });
+    } catch {
+      if (button) button.textContent = "咨询";
+    }
   });
 }
 
 const orthoForm = document.querySelector(".ortho-form");
 if (orthoForm) {
-  orthoForm.addEventListener("submit", (event) => {
+  orthoForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    const inputs = orthoForm.querySelectorAll("input");
+    const problem = inputs[0]?.value.trim() || "我想了解牙齿矫正方案";
+    const phone = inputs[1]?.value.trim() || "";
     const button = orthoForm.querySelector("button span");
     if (button) button.textContent = "已收到预约";
+    try {
+      await submitLead({
+        name: "正畸咨询客户",
+        phone,
+        interest: problem,
+        source: "正畸微笑预览页",
+      });
+    } catch {
+      if (button) button.textContent = phone ? "提交预约" : "请填写手机号";
+    }
   });
 }
 
