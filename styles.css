@@ -249,32 +249,37 @@ input {
 }
 
 .hero-smile-hook {
-  width: min(100%, 590px);
-  min-height: 96px;
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  z-index: 34;
+  width: 258px;
+  min-height: 0;
   display: grid;
-  grid-template-columns: 116px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 16px;
-  margin-top: 18px;
-  padding: 10px 14px 10px 10px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: start;
+  gap: 11px;
+  margin-top: 0;
+  padding: 10px;
   border: 1px solid rgba(248, 223, 174, 0.72);
   border-radius: 8px;
   color: #15272d;
   background: rgba(255, 255, 255, 0.93);
   box-shadow: 0 22px 56px rgba(0, 0, 0, 0.32);
   text-shadow: none;
+  transform: translateY(-50%);
   backdrop-filter: blur(14px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-smile-hook:hover {
-  transform: translateY(-2px);
+  transform: translateY(calc(-50% - 2px));
   box-shadow: 0 28px 66px rgba(0, 0, 0, 0.38);
 }
 
 .hero-smile-visual {
   position: relative;
-  min-height: 76px;
+  min-height: 88px;
   overflow: hidden;
   border-radius: 6px;
   background: #102d35;
@@ -301,7 +306,7 @@ input {
 
 .hero-smile-visual img {
   width: 100%;
-  height: 76px;
+  height: 88px;
   object-fit: cover;
 }
 
@@ -342,19 +347,22 @@ input {
 
 .hero-smile-text strong {
   color: #14252b;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.35;
 }
 
 .hero-smile-text small {
   margin-top: 5px;
   color: #61717a;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.45;
 }
 
 .hero-smile-hook > svg {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   width: 24px;
   height: 24px;
   color: #0aa3b5;
@@ -1677,6 +1685,22 @@ input {
 }
 
 @media (max-width: 1179px) {
+  .hero-smile-hook {
+    left: 12px;
+    width: 226px;
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .hero-smile-visual,
+  .hero-smile-visual img {
+    min-height: 76px;
+    height: 76px;
+  }
+
+  .hero-smile-text strong {
+    font-size: 16px;
+  }
+
   .ortho-hero-grid {
     grid-template-columns: 1fr;
   }
@@ -1744,11 +1768,21 @@ input {
   }
 
   .hero-smile-hook {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: calc(78px + env(safe-area-inset-bottom));
+    width: auto;
     min-height: auto;
     grid-template-columns: 88px minmax(0, 1fr) 20px;
     gap: 10px;
-    margin-top: 16px;
+    margin-top: 0;
     padding: 9px;
+    transform: none;
+  }
+
+  .hero-smile-hook:hover {
+    transform: translateY(-2px);
   }
 
   .hero-smile-visual {
